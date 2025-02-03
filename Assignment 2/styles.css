@@ -1,0 +1,39 @@
+* {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+h3 {
+    padding-bottom: 1rem;
+}
+
+form {
+    padding: 2rem;
+}
+
+label {
+    margin-right: 1rem;
+}
+
+button {
+    border: none;
+    padding: 1rem;
+    
+}
+#hero {
+    color:white;
+    background-color: rgb(142, 227, 142);
+    margin: 0.5rem;
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+#inputForm {
+    background-image: linear-gradient(rgb(227, 242, 152),rgb(142, 227, 142) );
+    padding: 3rem;
+    margin: 2rem;
+    border-radius: 20px;
+
+
+}
+
