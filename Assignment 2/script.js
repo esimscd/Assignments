@@ -1,10 +1,11 @@
 //Accessing input from page, selecting all radio input buttons
 
-const tempButton = document.querySelectorAll("input[name='temp']");
-const  preferenceButton = document.querySelectorAll("input[name='preference]");
+const hotRd = document.getElementById("hot")
+const coldRd = document.getElementById("cold")
+const adventureRd = 
 
 //Checking that input was collected correctly
-console.log(tempButton)
+console.log("hotRd")
 
 //Creating an array of possible destinations to select from
 const destinations = ["India", ""]
