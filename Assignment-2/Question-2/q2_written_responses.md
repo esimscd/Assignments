@@ -14,7 +14,11 @@ These methods have been demonstrated in Arraypractice.png
 
 ## 2.2: Objects
 
-- An object method is function that exists inside an object. To call this we reference the object name first and then .method
+- An object method could refer to multiple techniques that can be used on an obect. It may refer to a specific function that is defined inside an object. To call this we reference the object name first and then .methodName for example. This would be used if you wanted the object to perform a specific action or behaviour.
+
+There are also built in Object Methods that exist in JavaScript, these can be used on any object data type to perform tasks such as retreiving data from or modifying data inside the object. Examples of general object methods are Object.keys(object) this returns a list of the key names in the object or Object.values(object) which does the same but with the value counterparts of the object key-value pair.
+
+![Screenshot of console when creating an object and using general object methods](objectpractice1.png)
 
 ## 2.3: Events
 

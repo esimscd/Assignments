@@ -3,7 +3,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
-h3 {
+p {
     padding-bottom: 1rem;
 }
 
@@ -19,13 +19,15 @@ button {
     border: none;
     padding: 1rem;
     border-radius: 10px;
+    border: solid 0.1rem green
 }
-#hero {
+#heading {
     color:white;
     background-color: rgb(142, 227, 142);
-    margin: 0.5rem;
+    margin: 2rem;
     padding: 3rem;
     border-radius: 20px;
+    font-size: 2rem;
 }
 
 #inputForm {
@@ -33,7 +35,8 @@ button {
     padding: 3rem;
     margin: 2rem;
     border-radius: 20px;
-
-
 }
 
+#result {
+    padding-top: 2rem;
+}

@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Holiday Destination Generator</title>
+    <title>Travel Destination Generator</title>
     <link rel="stylesheet" href="styles.css" />
-    
   </head>
   <body>
-    <div id="hero">
-      <h1>Let's find a holiday destination  🧳</h1>
-    </div>
     <div id="inputForm">
       <form id="tempInput">
-        <h3>Which climate do you prefer?</h3>
+        <p>Which climate do you prefer?</p>
         <input type="radio" id="hot" name="temp" value="hot" />
-        <label>Hot ☀️</label>
+        <label for="hot">Hot ☀️</label>
         <input type="radio" id="cold" name="temp" value="cold" />
-        <label>Cold ❄️</label>
+        <label for="cold">Cold ❄️</label>
       </form>
       <form id="preferenceInput">
-        <h3>How do you prefer to spend your time?</h3>
-        <input type="radio" id="adventure" name="preference" value="adventure" />
-        <label>Being adventurous 🪂</label>
+        <p>How do you prefer to spend your time?</p>
+        <input
+          type="radio"
+          id="adventure"
+          name="preference"
+          value="adventure"
+        />
+        <label for="adventure">Being adventurous 🪂</label>
         <input type="radio" id="relax" name="preference" value="relax" />
-        <label>Relaxing 🧘🏼‍♀️</label>
+        <label for="relax">Relaxing 🧘🏼‍♀️</label>
       </form>
-      <button>Show me where to go!</button>
-    </div>
-    <div id="result">
+      <button id="checkInputBtn">Show me where to go!</button>
+      <p id="result"></p>
     </div>
   </body>
   <script src="script.js"></script>

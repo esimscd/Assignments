@@ -14,3 +14,16 @@ console.log(cfgStreams)
 const myString = "Code first girls"
 const myArray = myString.split(" ") // split using a space to return each world as an element of the array
 console.log(myArray)
+
+
+//Creating an object containing multiple objects
+const programmingLanguage = {
+    name: "Python", 
+    release: 1991, 
+    createdBy: "Guido van Rossum" 
+}
+
+//Demonstrating general object methods 
+console.log(Object.keys(programmingLanguage));
+console.log(Object.values(programmingLanguage));
+
