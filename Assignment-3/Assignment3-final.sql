@@ -1,5 +1,5 @@
 /* I work for a small online fashion retailer so I was thinking about the way that databases would be 
-used in this industry and playing around with retreiving and manipulating data to complete essential task
+used in this industry and playing around with retreiving and manipulating data to complete essential tasks
 This is currently a very simplified version in which there are not different sizes of each item and each
 order contains only one item but I'd like to be able to make it more complex
 
@@ -174,6 +174,7 @@ DELIMITER ;
 -- testing function and inputing values
 CALL addNewProduct ("DR004", "Midi dress", "White", 35.99);
 
+-- seeing that new item was added
 SELECT *
 FROM products
 ORDER BY product_id;
