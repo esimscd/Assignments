@@ -36,4 +36,3 @@ This repository will be used for the first assignent to demonstrate the use of G
 
 11. Merged branch into main
     - Ended up repeating last steps branching and merging a few times when adding new features and making edits so some screenshots show different branches being used
-
