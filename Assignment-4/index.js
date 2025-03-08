@@ -33,12 +33,30 @@ app.post('/upload-item', (req,res) => {
     })
 });
 
-
 //Get request to show all currently listed items
 app.get('/items', (req, res) => {
-    const sql = 'SELECT * FROM items'
+    const sql = 'SELECT * FROM sale_items'
+    pool.query(sql, (err, results) => {
+        if (err) { 
+            return res.status(500).json({error: `${err.message}`})
+        }
+        return res.status(200).json(results)
+    })
+});
 
-})
-
-
+//Put request to update price on a listed item 
+app.put('/update-price/:id', (req, res) => {
+    const itemId = req.params.id
+    const { price } = req.body
+    const sql = 'UPDATE sale_items set price = ? WHERE id = ?'
+    pool.query(sql, [price, itemId], (err, result) => {
+        if (err) {
+            return res.status(500).json({error: `${err}`})
+        }
+        else if (result.affectedRows === 0) {
+            return res.status(404).json({error: 'Item does not exist'})
+        }
+        res.status(200).json({message: `Price successfully updated to ${price} on item with ID: ${itemId}`})
+    } )
+});
 
