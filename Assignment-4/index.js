@@ -6,15 +6,16 @@ app.use(express.json());
 
 // Create a mysql connection pool
 const pool = mysql.createPool({
-    host: 'localhost', //MySQL server host
-    user: 'root', //MySQL user,
-    password: 'Cfg123.4', //MySQL password
+    host: process.env.DB_HOST,
+    user: process.env.USER_ID,
+    password: process.env.PASSWORD,
     database: 'resale',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0 
 });
 
+console.log(process.env.USER_ID);
 
 //Check the server is running
 app.listen(PORT, () => {
@@ -47,16 +48,48 @@ app.get('/items', (req, res) => {
 //Put request to update price on a listed item 
 app.put('/update-price/:id', (req, res) => {
     const itemId = req.params.id
-    const { price } = req.body
+    const { price } = Number(req.body)
+    if (Number.isNaN(price) || price <= 0){
+        return res.status(400).json({error: 'Price must be a number over zero'});
+    } // Check price input by user is a number above zero before running sql query 
     const sql = 'UPDATE sale_items set price = ? WHERE id = ?'
     pool.query(sql, [price, itemId], (err, result) => {
         if (err) {
-            return res.status(500).json({error: `${err}`})
+            return res.status(500).json({error: `${err}`});
         }
-        else if (result.affectedRows === 0) {
-            return res.status(404).json({error: 'Item does not exist'})
+        if (result.affectedRows === 0) {
+            return res.status(404).json({error: 'Item does not exist'});
         }
         res.status(200).json({message: `Price successfully updated to ${price} on item with ID: ${itemId}`})
     } )
 });
 
+//Get request for full info on a single item by Id
+app.get('/items/:id', (req, res) => {
+    const itemId = req.params.id
+    const sql = 'SELECT * FROM sale_items WHERE id = ?'
+    pool.query(sql, [itemId], (err, result) => {
+        if (err) {
+            return res.status(500).json({error:`${err}`})
+        }
+        if (result.length === 0){
+            return res.status(404).json({error: `Item with ID ${itemId} does not exist`})
+        }
+        res.status(200).json(result[0])
+    })
+});
+
+//Delte request to remove single item by Id
+app.delete('/delete-item/:id', (req, res) => {
+    const itemId = req.params.id
+    const sql = 'DELETE FROM sale_items WHERE id = ?'
+    pool.query(sql, [itemId], (err, result) => {
+        if (err) {
+            return res.status(500).json({error:`${err}`})
+        }
+        else if (result.affectedRows === 0){
+            return res.status(404).json({error: `Item with ID ${itemId} does not exist`})
+        }
+        res.status(200).json({message: `Item with ID ${itemId} removed`})
+    })
+});
