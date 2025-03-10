@@ -21,7 +21,7 @@ This API allows a user to list items of clothing for sale, the database would be
         );
 
 3. Run `npm init -y` in the terminal to install node and its dependencies locally
-4. Rename env_example file to `.env` and fill in own credentials to link mySql, there is a template in the env_example file. More information on filling in each detail:
+4. Rename `env.example` file to `.env` and fill in own credentials to link mySql, there is a template in the env_example file. More information on filling in each detail:
 
         DB_HOST= your host name
         USER_ID= your username/Id for mySql
@@ -32,8 +32,8 @@ This API allows a user to list items of clothing for sale, the database would be
 
 5. To run the file and start the server run the command `npm start` in the terminal, you'll know it is running when it tells you which server it is running on
 
-## Different endpoints and their use case
-### Get request
+# Different endpoints and their use cases
+## Get request
 There are two routes through which a get request can be carried out. 
 
 * The route `/items` can list all items currently uploaded on to the site
@@ -46,7 +46,7 @@ There are two routes through which a get request can be carried out.
 
 
 
-### Post request
+## Post request
 Post request lets a user upload a new item to the database. 
 
 ![alt text](<img/Screenshot 2025-03-10 at 18.37.30.png>)
@@ -55,7 +55,7 @@ There is a validation condition to check all fields are filled in. User must inp
 
 ![post request with validation](<img/Screenshot 2025-03-10 at 18.18.58.png>)
 
-### Put request
+## Put request
 Put request lets the user update item price. This could be adapted to update all fiels but price seems to be the one you'd want to update on a live listing. 
 
 ![update price on item](<img/Screenshot 2025-03-10 at 18.20.15.png>)
@@ -64,7 +64,7 @@ Validation also checks price is a number above zero.
 
 ![Error showing issue with input number](<img/Screenshot 2025-03-10 at 18.20.02.png>)
 
-### Delete request
+## Delete request
 Lets user remove an item from the database
 
 ![Screenshot of item removed through delete req](<img/Screenshot 2025-03-09 at 11.48.05.png>)
