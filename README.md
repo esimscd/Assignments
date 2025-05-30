@@ -22,8 +22,6 @@ This repository will be used for the first assignent to demonstrate the use of G
 
 9. Added, commited and pushed my finished branch
 
-   ![Screenshot of adding and committing branch](img/addcommitbranch.png)
-
 10. Created a pull request
 
     ![Screenshot of merge request on Git Hub](img/pullreq.png)
