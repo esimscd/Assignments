@@ -1,4 +1,4 @@
-# CFG Assignment 1 - Git and GitHub
+# Assignment 1 - Git and GitHub
 
 This repository will be used for the first assignent to demonstrate the use of Git commands and GitHub
 
