@@ -8,18 +8,12 @@ This repository will be used for the first assignent to demonstrate the use of G
 2. Created a README file in VS code
 3. Used `git status` to check status of file - it is currently not being tracked
 
-   ![screenshot checking status of main](img/image-1.png)
-
 4. Initiated git on this file using `git init`, added and commited the repository using `git add .` and `git commit -m`
 5. Pushed the initial commit to remote repository CFG-Assignments using `git push`
 6. Checked status of main on local - up to date
 7. Created Branch and switched to it
 
-   ![Screenshot of git commands used in terminal to create branch](img/branchandcheckoutImg.png)
-
 8. Made changes to the branch, added steps, images, and added new files such as .gitignore and a requirements.txt file
-
-   ![Screenshot of ignore created using touch](img/touchifgnore.png)
 
    - A **.gitignore** is a file in the repository that tells git to ignore certain listed file types when committing to the repository.
      These files then stay in your local repository and are never pushed to the remote repository.
